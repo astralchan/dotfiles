@@ -1,10 +1,4 @@
 #!/bin/sh
 
-chosen="$( < ~/.local/share/chars dmenu -i -l 30 | sed "s/ .*//")"
-
-[ -z "$chosen" ] && exit
-
-printf "%s" "$chosen" | xclip -selection clipboard
-[ "$(command -v "notify-send")" ] && notify-send "$chosen copied to clipboard."
-
-exit 0
+< ~/.local/share/chars dmenu -i -l 30 | sed "s/ .*//" | tr -d '\n' |
+	xclip -selection clipboard
