@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# See if battery can be read
+[ ! -r /sys/class/power_supply/BAT0 ] && { echo "No battery found"; exit 1; }
+
+# Loop through the batteries
+for battery in /sys/class/power_supply/BAT?*
+do
+	read -r status < "$battery/status"
+	read -r capacity < "$battery/capacity"
+
+	case "$status" in
+	"Full") status="" ;;
+	"Charging") status="" ;;
+	"Discharging")
+		case "$capacity" in
+		[0-9]|1[0-9]|20) status="" ;;
+		2[1-9]|3[0-9]|40) status="" ;;
+		4[1-9]|5[0-9]|60) status="" ;;
+		6[1-9]|7[0-9]|80) status="" ;;
+		8[1-9]|9[0-9]|100) status="" ;;
+		*) status="❓" ;;
+		esac && [ "$capacity" -le 25 ] && printf "⚠️ "
+		;;
+	*) status="❓" ;;
+	esac
+
+	printf "%s %d\n" "$status" "$capacity"
+done
+
+exit 0

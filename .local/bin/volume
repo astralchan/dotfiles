@@ -1,0 +1,16 @@
+#!/bin/sh
+
+level="$(amixer get Master | tail -n 1 | cut -d' ' -f6 | tr -d '][%')"
+
+case $level in
+[0-9]|1[0-9]|2[0-9]|3[0-3]) icon="" ;;
+3[4-9]|4[0-9]|5[0-9]|6[0-6]) icon="🔈" ;;
+6[7-9]|7[0-9]|8[0-9]|9[0-9]|100) icon="🔊" ;;
+*) icon="❓" ;;
+esac
+
+[ "$(amixer get Master | tail -n 1 | cut -d' ' -f8)" = "[off]" ] && icon="🔇"
+
+printf "%s%d\n" "$icon" "$level"
+
+exit 0
