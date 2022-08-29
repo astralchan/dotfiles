@@ -1,4 +1,4 @@
 #!/bin/sh
 
-cat ~/.local/share/unicode-chars/* | dmenu -i -l 30 | sed "s/ ##.*$//" |
+cat ~/.local/share/unicode-chars/* | dmenu -i -l 30 | sed "s/ .*//" |
 	tr -d '\n' | xclip -selection clipboard
