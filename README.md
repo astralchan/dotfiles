@@ -31,3 +31,6 @@ These scripts are released into the public domain.
 To see the emojis, there are plenty of free emojis such as noto. For the font
 awesome symbols, there is a free version - but to see all of them, you would
 want a pro version.
+
+The `emoticons` file is ripped from
+[List of emoticons](https://en.wikipedia.org/wiki/List_of_emoticons).
