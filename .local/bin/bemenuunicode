@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cat ~/.local/share/unicode-chars/* | bemenu -i -l 30 | sed "s/ .*//" |
+	tr -d '\n' | wl-copy

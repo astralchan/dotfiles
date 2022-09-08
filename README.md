@@ -8,7 +8,7 @@ be more portable and be compatible with IEEE / Open Group 1003.1-2017
 
 # Description
 
-These are some scripts for dmenu / alsa.
+These are some scripts for bemenu / alsa.
 
 The battery script should work anywhere.
 
@@ -22,7 +22,9 @@ The font awesome characters are extracted from the
 [Font Awesome Pro Cheatsheet](https://fontawesome.com/v5/cheatsheet/pro).
 
 The format is the symbol, a space, and a description. The script to use them
-can easily be replaced with `wl-copy` / `bemenu` if using wayland.
+can easily be replaced with `xclip` / `dmenu` if using xorg.
+
+Might switch to fork-awesome instead of font-awesome.
 
 # License
 
