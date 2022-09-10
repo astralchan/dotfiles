@@ -15,7 +15,7 @@ The battery script should work anywhere.
 The emojis are extracted from
 [emoji-15.0-emoji-sequences](https://unicode.org/Public/emoji/15.0/emoji-sequences.txt)
 ,
-[emoji-15.0-emoji-zjw-sequences](https://www.unicode.org/Public/emoji/15.0/emoji-zwj-sequences.txt)
+[emoji-15.0-emoji-zwj-sequences](https://www.unicode.org/Public/emoji/15.0/emoji-zwj-sequences.txt)
 , and
 [emoji-15.0-emoji-test](https://unicode.org/Public/emoji/14.0/emoji-test.txt).
 The font awesome characters are extracted from the
